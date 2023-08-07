@@ -1,0 +1,19 @@
+{
+"type": "FeatureCollection",
+"name": "public libraries",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Powder House Square" }, "geometry": { "type": "Point", "coordinates": [ -71.1164661, 42.4000893 ] } },
+{ "type": "Feature", "properties": { "Name": "Somerville Public Library West Branch" }, "geometry": { "type": "Point", "coordinates": [ -71.1216885, 42.3981381 ] } },
+{ "type": "Feature", "properties": { "Name": "Charlotte and William Bloomberg Medford Public Library" }, "geometry": { "type": "Point", "coordinates": [ -71.113589, 42.4197384 ] } },
+{ "type": "Feature", "properties": { "Name": "Malden Public Library" }, "geometry": { "type": "Point", "coordinates": [ -71.0661658, 42.4279025 ] } },
+{ "type": "Feature", "properties": { "Name": "Cambridge Public Library - Central Square Branch" }, "geometry": { "type": "Point", "coordinates": [ -71.1038586, 42.3640647 ] } },
+{ "type": "Feature", "properties": { "Name": "Honan-Allston Branch of the Boston Public Library" }, "geometry": { "type": "Point", "coordinates": [ -71.1280944, 42.3601136 ] } },
+{ "type": "Feature", "properties": { "Name": "Uphams Corner Branch of the Boston Public Library" }, "geometry": { "type": "Point", "coordinates": [ -71.067653, 42.3147617 ] } },
+{ "type": "Feature", "properties": { "Name": "Needham Free Public Library" }, "geometry": { "type": "Point", "coordinates": [ -71.2354833, 42.2876401 ] } },
+{ "type": "Feature", "properties": { "Name": "Cary Memorial Library" }, "geometry": { "type": "Point", "coordinates": [ -71.2296558, 42.4483273 ] } },
+{ "type": "Feature", "properties": { "Name": "Framingham Public Library" }, "geometry": { "type": "Point", "coordinates": [ -71.4169149, 42.28217 ] } },
+{ "type": "Feature", "properties": { "Name": "Holliston Public Library" }, "geometry": { "type": "Point", "coordinates": [ -71.4291196, 42.2003734 ] } },
+{ "type": "Feature", "properties": { "Name": "Millis Public Library" }, "geometry": { "type": "Point", "coordinates": [ -71.3620119, 42.1659351 ] } }
+]
+}

@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Animorphs</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+        <link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Space+Mono&family=Tektur&display=swap');
+		  </style>
+	
+    </head>
+    <body>
+			<div class="intro">
+				<p class="main">The Search for Animorphs</p>
+				<p class="subheader">Five teens acquire the ability to morph into any animal they touch.</p>
+				<p class="byline">By Florina Sutanto</p>
+            </div>
+
+			<div>
+				<!-- <h3 class = "section-header">Fandometrics and Fan Culture</h3> -->
+				<p class="main-body">bapbapbadabada
+				</p>
+			</div>
+
+
+
+<!-- SCROLLAMA START -->
+<!-- <img src="maps/pngs/base.png"> -->
+
+		<section id="scrolly">
+			<div class="sticky-thing">
+				<div id="image-container">
+					<script src="js/script.js"></script>  
+				</div>
+				<div>
+					<img id="maps" src="maps/pngs/edit_0_base.png">
+				</div>
+			</div>
+  
+		  <div class="scrolly-overlay">
+			<div class="step" id="step-0">
+			  <p>animorphs!!!!!</p>
+			</div>
+			<div class="step" id="step-1">
+				<p>this is where i lived. powder house square!</p>
+			</div>
+			<div class="step" id="step-2">
+			  <p>somerville library west branch. 0 animorphs books :(</p>
+			</div>
+			<div class="step" id="step-3">
+				<p>medford</p>
+			</div>
+			<div class="step" id="step-4">
+			  <p>malden</p>
+			</div>
+			<div class="step" id="step-5">
+			  <p>cambridge</p>
+			</div>
+			<div class="step" id="step-6">
+				<p>honan</p>
+			</div>
+			<div class="step" id="step-7">
+				<p>uphams</p>
+			</div>
+			<div class="step" id="step-8">
+				<p>needham</p>
+			</div>
+			<div class="step" id="step-9">
+				<p>cary</p>
+			</div>
+			<div class="step" id="step-10">
+				<p>framingham</p>
+			</div>
+			<div class="step" id="step-11">
+				<p>holliston</p>
+			</div>
+			<div class="step" id="step-12">
+				<p>millis</p>
+			</div>
+			<div class="step" id="step-13">
+				<p>all libraries</p>
+			</div>
+			<div class="step" id="step-14">
+				<p>end</p>
+			</div>
+		  </div>
+		</section>
+  
+		<!-- where the magic happens -->
+		<script src="js/scrollama.js"></script>  
+
+  <script>
+	  const scroller = scrollama();
+  
+	  scroller
+		  .setup({
+			  step: "#scrolly .scrolly-overlay .step",
+			  offset: 0.75,
+			  debug: false
+		  })
+		  .onStepEnter(function({ element, index, direction}) {
+			  const event = new CustomEvent('stepin', { detail: { direction: direction } })
+			  element.dispatchEvent(event);
+		  })
+		  .onStepExit(function({ element, index, direction }) {
+			const event = new CustomEvent('stepout', { detail: { direction: direction } })
+			element.dispatchEvent(event);
+		  });
+  
+	  window.addEventListener("resize", scroller.resize);
+	  </script>
+  
+  
+<!-- ai2html resizer script (deleted) -->
+  
+
+<!-- SCROLLAMA END -->
+
+
+        <div>
+            <h3 class = "section-header">Libraries</h3>
+			<p class="main-body">text
+            </p>
+        </div>
+		
+		
+        <p class= "Sources">
+			<a href="https://github.com/retrospatial/tumblr-fandometrics" title="github" target="_blank">
+				<i class="fa fa-github" style="font-size:36px; text-align: center; color:#9AA5DB"></i><br/>
+			</a>	
+
+	    </p>
+
+		<!-- <script src="https://d3js.org/d3.v6.min.js"></script>
+		<script src="https://unpkg.com/scrollama@2.4.0/dist/scrollama.min.js"></script>
+		<script src="js/script.js"></script> -->
+	</body>
+</html>
+
+
