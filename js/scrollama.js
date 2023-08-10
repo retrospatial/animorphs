@@ -4,13 +4,13 @@
         console.log(location);
         if (e.detail.direction === "down") {
             console.log("going down");
-            d3.select("#maps").attr("src", `maps/pngs/edit_${stepNumber}_${location}.png`);
+            d3.select("#maps").attr("src", `maps/pngs/edited compressed/edit_${stepNumber}_${location}-min.png`);
             imageIds.forEach(imageId => {
                 revertImage(`image-${imageId}`);
             });
         } else if (e.detail.direction === "up") {
             console.log("going up");
-            d3.select("#maps").attr("src", `maps/pngs/edit_${stepNumber - 1}_${prev_location}.png`);
+            d3.select("#maps").attr("src", `maps/pngs/edited compressed/edit_${stepNumber - 1}_${prev_location}-min.png`);
             imageIds.forEach(imageId => {
                 grayscaleImage(`image-${imageId}`);
             });
