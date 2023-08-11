@@ -64,3 +64,7 @@ const steps = [
 steps.forEach(step => {
     handleStep(step.stepNumber, step.location, step.prev_location, step.imageIds);
 });
+
+Promise.all(steps.map(step => 
+    loadImage(`maps/pngs/edited compressed/edit_${step.stepNumber}_${step.location}-min.png`)
+    ))
