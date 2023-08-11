@@ -68,3 +68,10 @@ steps.forEach(step => {
 Promise.all(steps.map(step => 
     loadImage(`maps/pngs/edited compressed/edit_${step.stepNumber}_${step.location}-min.png`)
     ))
+
+
+// Distance Counter 
+
+// 1. define element and update content 
+// 2. call the function at the desired step
+// 3. pass the function with the distance variable which corresponds to the step number
