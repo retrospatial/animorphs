@@ -1,3 +1,13 @@
+// Loads all the images
+function loadImage(src) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = src;
+    });
+}
+ 
  // Define a function to handle step actions
  function handleStep(stepNumber, location, prev_location, imageIds) {
     d3.select(`#step-${stepNumber}`).on('stepin', function (e) {

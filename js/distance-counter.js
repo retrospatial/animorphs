@@ -1,16 +1,3 @@
-// Define a function to handle step actions
-function handleStep(stepNumber, location, distance) {
-    console.log(`distance counter`);
-    d3.select(`#step-${stepNumber}`).on('stepin', function (e) {
-        if (e.detail.direction === "down") {
-            totalDistance += distance;
-        } else if (e.detail.direction === "up") {
-            totalDistance -= distance;
-        }
-        updateDistanceDisplay(totalDistance);
-    });
-}
-
 // Function to update the distance display
 function updateDistanceDisplay(distance) {
     const distanceElement = document.getElementById("distance-counter");
