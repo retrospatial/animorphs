@@ -7,26 +7,45 @@ function loadImage(src) {
         img.src = src;
     });
 }
- 
+
  // Define a function to handle step actions
  function handleStep(stepNumber, location, prev_location, imageIds) {
-    d3.select(`#step-${stepNumber}`).on('stepin', function (e) {
+    d3.select(`#step-${stepNumber}`).on('stepin', function(e) {
         console.log(location);
-        if (e.detail.direction === "down") {
-            console.log("going down");
-            d3.select("#maps").attr("src", `maps/pngs/edited compressed/edit_${stepNumber}_${location}-min.png`);
-            imageIds.forEach(imageId => {
-                revertImage(`image-${imageId}`);
-            });
-        } else if (e.detail.direction === "up") {
-            console.log("going up");
-            d3.select("#maps").attr("src", `maps/pngs/edited compressed/edit_${stepNumber - 1}_${prev_location}-min.png`);
-            imageIds.forEach(imageId => {
-                grayscaleImage(`image-${imageId}`);
-            });
-        }
+        d3.select("#maps").attr("src", `maps/pngs/edited compressed/edit_${stepNumber}_${location}-min.png`);
+        imageIds.forEach(imageId => {
+            revertImage(`image-${imageId}`);
+        });
+    });
+
+    d3.select(`#step-${stepNumber}`).on('stepout', function(e) {
+        console.log("going up");
+        d3.select("#maps").attr("src", `maps/pngs/edited compressed/edit_${stepNumber - 1}_${prev_location}-min.png`);
+        imageIds.forEach(imageId => {
+            grayscaleImage(`image-${imageId}`);
+        });
     });
 }
+
+
+// function handleStep(stepNumber, location, prev_location, imageIds) {
+//     d3.select(`#step-${stepNumber}`).on('stepin', function (e) {
+//         console.log(location);
+//         if (e.detail.direction === "down") {
+//             console.log("going down");
+//             d3.select("#maps").attr("src", `maps/pngs/edited compressed/edit_${stepNumber}_${location}-min.png`);
+//             imageIds.forEach(imageId => {
+//                 revertImage(`image-${imageId}`);
+//             });
+//         } else if (e.detail.direction === "up") {
+//             console.log("going up");
+//             d3.select("#maps").attr("src", `maps/pngs/edited compressed/edit_${stepNumber - 1}_${prev_location}-min.png`);
+//             imageIds.forEach(imageId => {
+//                 grayscaleImage(`image-${imageId}`);
+//             });
+//         }
+//     });
+// }
 
 // Function to revert an individual image to its original color and opacity
 function revertImage(imageId) {
@@ -68,6 +87,31 @@ steps.forEach(step => {
 Promise.all(steps.map(step => 
     loadImage(`maps/pngs/edited compressed/edit_${step.stepNumber}_${step.location}-min.png`)
     ))
+
+
+
+// scroller
+
+const scroller = scrollama();
+
+scroller
+    .setup({
+        step: "#scrolly .scrolly-overlay .step",
+        offset: 0.5,
+        debug: false
+    })
+    .onStepEnter(function({ element, index, direction }) {
+        const event = new CustomEvent('stepin', { detail: { direction: direction } });
+        element.dispatchEvent(event);
+    })
+    .onStepExit(function({ element, index, direction }) {
+        if (direction === 'up') {
+            const event = new CustomEvent('stepout', { detail: { direction: direction } });
+            element.dispatchEvent(event);
+        }
+    });
+
+window.addEventListener("resize", scroller.resize);
 
 
 // Distance Counter 
