@@ -27,26 +27,6 @@ function loadImage(src) {
     });
 }
 
-
-// function handleStep(stepNumber, location, prev_location, imageIds) {
-//     d3.select(`#step-${stepNumber}`).on('stepin', function (e) {
-//         console.log(location);
-//         if (e.detail.direction === "down") {
-//             console.log("going down");
-//             d3.select("#maps").attr("src", `maps/pngs/edited compressed/edit_${stepNumber}_${location}-min.png`);
-//             imageIds.forEach(imageId => {
-//                 revertImage(`image-${imageId}`);
-//             });
-//         } else if (e.detail.direction === "up") {
-//             console.log("going up");
-//             d3.select("#maps").attr("src", `maps/pngs/edited compressed/edit_${stepNumber - 1}_${prev_location}-min.png`);
-//             imageIds.forEach(imageId => {
-//                 grayscaleImage(`image-${imageId}`);
-//             });
-//         }
-//     });
-// }
-
 // Function to revert an individual image to its original color and opacity
 function revertImage(imageId) {
     console.log(`Reverting image ${imageId}`);
@@ -88,8 +68,6 @@ Promise.all(steps.map(step =>
     loadImage(`maps/pngs/edited compressed/edit_${step.stepNumber}_${step.location}-min.png`)
     ))
 
-
-
 // scroller
 
 const scroller = scrollama();
@@ -114,8 +92,3 @@ scroller
 window.addEventListener("resize", scroller.resize);
 
 
-// Distance Counter 
-
-// 1. define element and update content 
-// 2. call the function at the desired step
-// 3. pass the function with the distance variable which corresponds to the step number
